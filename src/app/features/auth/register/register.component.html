@@ -1,0 +1,189 @@
+<header id="header" class="animated fadeInDown">
+
+  <div id="logo-group">
+    <span id="logo"> <img src="assets/img/logo.png" alt="AviationMax"> </span>
+  </div>
+
+  <span id="extr-page-header-space">
+        <span class="hidden-mobile hiddex-xs">Already registered?</span> <a routerLink="/auth/login" class="btn btn-danger">Sign In</a> </span>
+
+</header>
+<div id="main" role="main" class="animated fadeInDown">
+
+  <!-- MAIN CONTENT -->
+  <div id="content" class="container">
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 hidden-xs hidden-sm">
+        <h1 class="txt-color-red login-header-big">Air Operations Management Portal</h1>
+        <div class="hero">
+
+          <div class="pull-left login-desc-box-l">
+            <h4 class="paragraph-header">Aviation Max&trade; is a portal for flight operations, maintenance, equipment and aviation program management</h4>
+            <div class="login-app-icons">
+                <table style="width: 100%; padding: 2%;">
+                    <tbody>
+                    <tr>
+                    <td>
+                        <a routerLink="/dashboard/analytics" class="btn btn-danger btn-sm">Enable your flight organization</a>
+                    </td>
+                    <td>
+                        <a routerLink="/smartadmin/app-layouts" class="btn btn-danger btn-sm">Find out more</a>
+                    </td>
+                    </tr>
+                    </tbody>
+                    </table>
+            </div>
+          </div>
+
+          <img src="assets/img/heloFront.png" alt="" class="pull-right display-image" style="width:210px">
+
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <h5 class="about-heading">About Lulius Innovation</h5>
+            <p>
+                Lulius Innovation is a world leader in application and software development targeting flight operations and aviation program managment.
+            </p>
+            <a href="http://www.luli.us">
+              <img src="assets/img/lulius-logo.png" alt="" style="width:204px">
+          </a>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+        <div class="well no-padding">
+
+          <form id="smart-form-register" class="smart-form client-form" (ngSubmit)="register(f)" #f="ngForm">
+            <header>
+              Registration is FREE*
+            </header>
+
+            <fieldset>
+              <!-- <section>
+                <label class="input"> <i class="icon-append fa fa-user"></i>
+                  <input type="text" name="username" placeholder="Username">
+                  <b class="tooltip tooltip-bottom-right">Needed to enter the website</b> </label>
+              </section> -->
+
+              <section>
+                <label class="input"> <i class="icon-append fa fa-envelope"></i>
+                  <input type="email" name="email" class="form-control" ngModel #email="ngModel" required placeholder="Email ID">
+                 
+                <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>
+                  Please enter username</b></label>
+
+                  <span class="help-block txt-color-red" *ngIf="email.touched && !email.valid ">Enter a valid Email</span>
+              </section>
+
+              <section>
+                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                  <input type="password" name="password"  ngModel #password="ngModel" required minlength="6" class="form-control" placeholder="Password">
+                  
+                <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter
+                  your password</b> </label>
+
+                 
+                  <span class="help-block txt-color-red" *ngIf=" password.touched && !password.valid ">Password should be atleast 6 characters long</span>
+                  </section>
+
+              <section>
+                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                  <input type="password" name="ConfrimPassword"  ngModel #ConfrimPassword="ngModel" required class="form-control" placeholder="Confirm Password">
+                  
+                <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Confirm your password</b> </label>
+
+                <span  class="help-block txt-color-red" *ngIf="password.value != ConfrimPassword.value && ConfrimPassword.touched">Password and confirm password doesn't match</span>
+              </section>
+            </fieldset>
+
+            <fieldset>
+              <!-- <div class="row">
+                <section class="col col-6">
+                  <label class="input">
+                      <input type="text" name="firstName"  ngModel #firstName="ngModel" data-smart-validate-input="" data-required="" data-minlength="3"
+                      data-maxnlength="20" data-message="Please enter your First Name" class="form-control" placeholder="First Name">
+                      <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter Your First Name</b>
+                  </label>
+                </section>
+                <section class="col col-6">
+                  <label class="input">
+                     <input type="text" name="lastName"  ngModel #lastName="ngModel" data-smart-validate-input="" data-required="" data-minlength="3"
+                    data-maxnlength="20" data-message="Please enter your Last Name" class="form-control" placeholder="Last Name">
+                    <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter Your Last Name</b>
+                  </label>
+                </section>
+              </div> -->
+
+              <!-- <div class="row">
+                <section class="col col-6">
+                  <label class="select">
+                    <select name="gender">
+                      <option value="0" selected disabled>Gender</option>
+                      <option value="1">Male</option>
+                      <option value="2">Female</option>
+                      <option value="3">Prefer not to answer</option>
+                    </select> <i></i> </label>
+                </section>
+                <section class="col col-6">
+                  <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                    <input type="text" name="request" placeholder="Request activation on" class="datepicker" data-dateformat="dd/mm/yy">
+                  </label>
+                </section>
+              </div> -->
+
+              <section>
+                <!-- <label class="checkbox">
+                  <input type="checkbox" name="subscription" id="subscription">
+                  <i></i>I want to receive news and special offers</label> -->
+                <label class="checkbox">
+                  <input type="checkbox" name="terms" id="terms" [(ngModel)]="termsAgreed">
+                  <i></i>I agree with the <a href="#" (click)="openModal($event, termsModal)"> Terms and Conditions </a></label>
+              </section>
+            </fieldset>
+            <footer>
+              <button type="submit" class="btn btn-primary" [disabled]="!f.valid">
+                Register
+              </button>
+            </footer>
+
+            <div class="message">
+              <i class="fa fa-check"></i>
+              <p>
+                Thank you for your registration!
+              </p>
+            </div>
+          </form>
+
+        </div>
+        <p class="note text-center">*FREE Registration ends on October 2015.</p>
+        <!-- <h5 class="text-center">- Or sign in using -</h5>
+        <ul class="list-inline text-center">
+          <li>
+            <a (click)="(null)" class="btn btn-primary btn-circle"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a (click)="(null)" class="btn btn-info btn-circle"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a (click)="(null)" class="btn btn-warning btn-circle"><i class="fa fa-linkedin"></i></a>
+          </li>
+        </ul> -->
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- <ng-container  *ngComponentOutlet="TermsModalComponent"></ng-container> -->
+
+<ng-template #termsModal>
+  <smart-terms-modal (agree)="onTermsAgree()" (close)="onTermsClose()"></smart-terms-modal>
+
+</ng-template>

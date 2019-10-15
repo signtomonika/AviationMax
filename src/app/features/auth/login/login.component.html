@@ -1,0 +1,104 @@
+<header id="header" class="animated fadeInDown">
+
+  <div id="logo-group">
+    <span id="logo"> <img src="assets/img/logo.png" alt="AviationMax"> </span>
+  </div>
+
+  <span id="extr-page-header-space"> <span class="hidden-mobile hiddex-xs">Need an account?</span> <a routerLink="/auth/register" class="btn btn-danger">Create account</a> </span>
+
+</header>
+<div id="main" role="main" class="animated fadeInDown">
+
+  <div id="content" class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
+        <h1 class="txt-color-red login-header-big">Air Operations Management Portal</h1>
+
+        <div class="hero">
+          <div class="pull-left login-desc-box-l">
+            <h4 class="paragraph-header">Aviation Max&trade; is a portal for flight operations, maintenance, equipment and aviation program management</h4>
+
+            <div class="login-app-icons">
+                <table style="width: 100%; padding: 2%;">
+                    <tbody>
+                    <tr>
+                    <td>
+                        <a routerLink="/dashboard/analytics" class="btn btn-danger btn-sm">Enable your flight organization</a>
+                    </td>
+                    <td>
+                        <a routerLink="/smartadmin/app-layouts" class="btn btn-danger btn-sm">Find out more</a>
+                    </td>
+                    </tr>
+                    </tbody>
+                    </table>
+            </div>
+          </div>
+          <img src="assets/img/heloFront.png" class="pull-right display-image" alt="" style="width:210px">
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <h5 class="about-heading">About Lulius Innovation</h5>
+
+            <p>
+              Lulius Innovation is a world leader in application and software development targeting flight operations and aviation program managment. 
+            </p>
+            <a href="http://www.luli.us">
+              <img src="assets/img/lulius-logo.png" alt="" style="width:204px">
+          </a>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+        <div class="well no-padding">
+            <form class="smart-form client-form" (ngSubmit)="login(f)" #f="ngForm">
+                <header style="font-family: 'Times New Roman'; font-size: 200%">
+                  Sign In
+                </header>
+                <fieldset>
+                  <section>
+                    <label class="label">Email ID</label>
+                    <label class="input"> <i class="icon-append fa fa-user"></i>
+                      <input type="email" name="email" class="form-control" ngModel #email="ngModel" required>
+                      <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>
+                        Please enter Email ID</b></label>
+                        <span class="help-block txt-color-red" *ngIf="email.touched && !email.valid ">Enter a valid Email</span>
+                  </section>
+                  <section>
+                    <label class="label">Password</label>
+                    <label class="input"> <i class="icon-append fa fa-lock"></i>
+                      <input type="password" name="password"  ngModel #password="ngModel" required minlength="6" class="form-control">
+                      <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter
+                        your password</b> </label>
+                        <span class="help-block txt-color-red" *ngIf="password.touched && !password.valid ">Enter a valid password</span>
+                    <!--  -->
+                  </section>
+              
+                </fieldset>
+                <footer>
+                  <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
+                    Sign in
+                  </button>
+      
+      
+                </footer>
+              </form>
+        </div>
+        <!-- <h5 class="text-center"> - Or sign in using -</h5>
+        <ul class="list-inline text-center">
+          <li>
+            <a (click)="(null)" class="btn btn-primary btn-circle"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a (click)="(null)" class="btn btn-info btn-circle"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a (click)="(null)" class="btn btn-warning btn-circle"><i class="fa fa-linkedin"></i></a>
+          </li>
+        </ul> -->
+      </div>
+    </div>
+  </div>
+</div>
