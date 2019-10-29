@@ -2,15 +2,15 @@ export const config: any = {
 
     //Firebase Config Starts
 
-  fbConfig : {
-    apiKey: "AIzaSyC75sUhp7rb4IwAFZ3iwxfh5RxiMZWZYnc",
-    authDomain: "projauthentication.firebaseapp.com",
-    databaseURL: "https://projauthentication.firebaseio.com",
-    projectId: "projauthentication",
-    storageBucket: "projauthentication.appspot.com",
-    messagingSenderId: "67191188338",
-    appId: "1:67191188338:web:e386c7fa73499138ef4beb"
-  }
+  // fbConfig : {
+  //   apiKey: "AIzaSyDoIOj8lwhWe1YtPUZldxzRcQ50X8Qekg0",
+  //   authDomain: "aviation-max.firebaseapp.com",
+  //   databaseURL: "https://aviation-max.firebaseio.com",
+  //   projectId: "aviation-max",
+  //   storageBucket: "aviation-max.appspot.com",
+  //   messagingSenderId: "1017340492467",
+  //   appId: "1:1017340492467:web:496ecf030abcefd0698ec6"
+  // }
 
   
 

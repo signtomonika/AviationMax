@@ -12,10 +12,17 @@
 
     <ul saSmartMenu>
 
-      <li routerLinkActive="active">
+      <!-- <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >
         <a routerLink="/home" title="Home">
           <i class="fa fa-lg fa-fw fa-home"></i>
           <span class="menu-item-parent">{{'Home' | i18n}}</span>
+        </a>
+      </li> -->
+
+      <li routerLinkActive="active">
+        <a routerLink="/home/aircrafts" title="Aircrafts">
+          <i class="fa fa-lg fa-fw fa-plane"></i>
+          <span class="menu-item-parent">{{'Aircrafts' | i18n}}</span>
         </a>
       </li>
 

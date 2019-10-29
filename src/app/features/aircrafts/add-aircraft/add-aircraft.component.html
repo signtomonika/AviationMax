@@ -1,0 +1,48 @@
+<form class="smart-form client-form" (ngSubmit)="addAircraft(f)" #f="ngForm">
+    
+    <fieldset>
+      <section>
+        <label class="label">Manager</label>
+        <label class="input"> <i class="icon-append fa fa-user"></i>
+          <input type="text" name="manager" class="form-control" [(ngModel)]="aircraft.manager" #manager="ngModel" required>
+          <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>
+            Please enter Manager Full Name</b></label>
+            <span class="help-block txt-color-red" *ngIf="manager.touched && !manager.valid ">Enter a valid Manager Name</span>
+      </section>
+      <section>
+        <label class="label">Hours</label>
+        <label class="input"> <i class="icon-append fa fa-clock-o"></i>
+          <input type="number" name="hours"  [(ngModel)]="aircraft.hours" #hours="ngModel"  required  class="form-control">
+          <b class="tooltip tooltip-top-right"><i class="fa fa-clock-o txt-color-teal"></i> Enter
+            Hours</b> </label>
+            <span class="help-block txt-color-red" *ngIf="hours.touched && !hours.valid ">Enter a valid hour</span>
+        <!--  -->
+      </section>
+
+      <section>
+          <label class="label">Tail Number</label>
+          <label class="input"> <i class="icon-append fa fa-fighter-jet"></i>
+            <input type="text" name="tailnumber"  [(ngModel)]="aircraft.tailnumber"  #tailnumber="ngModel" required minlength="7" class="form-control">
+            <b class="tooltip tooltip-top-right"><i class="fa fa-fighter-jet txt-color-teal"></i> Enter
+              Tail Number</b> </label>
+              <span class="help-block txt-color-red" *ngIf="tailnumber.touched && !tailnumber.valid ">Enter a valid tail number</span>
+          <!--  -->
+        </section>
+
+        <section>
+            <label class="label">Aircraft Type</label>
+            <label class="input"> <i class="icon-append fa fa-archive"></i>
+              <input type="text" name="type"  [(ngModel)]="aircraft.type"  #type="ngModel" required  class="form-control">
+              <b class="tooltip tooltip-top-right"><i class="fa fa-archive txt-color-teal"></i> Enter
+                Aircraft Type</b> </label>
+                <span class="help-block txt-color-red" *ngIf="type.touched && !type.valid ">Enter a valid aircraft type</span>
+            <!--  -->
+          </section>
+  
+    </fieldset>
+    <footer>
+      <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
+        Add Aircraft
+      </button>
+    </footer>
+  </form>

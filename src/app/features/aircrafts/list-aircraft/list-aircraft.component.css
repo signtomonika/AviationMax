@@ -1,0 +1,17 @@
+/* @import  "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" ;
+@import "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"; */
+
+.frame {
+    
+    
+    white-space: nowrap; /* This is required unless you put the helper span closely near the img */
+
+    text-align: center;
+    margin: 1em 0;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}

@@ -8,6 +8,12 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './features/auth/auth.service';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+
+import {environment} from "../environments/environment"
+import { AircraftService } from './services/aircraft.service';
+
 
 
 
@@ -22,7 +28,7 @@ import { AuthService } from './features/auth/auth.service';
     SharedModule,
     CoreModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

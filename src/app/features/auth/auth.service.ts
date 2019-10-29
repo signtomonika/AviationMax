@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
-import { config } from '../../shared/config'
+import { environment } from '../../../environments/environment'
 import { Router } from '@angular/router';
 
 @Injectable()
@@ -18,7 +18,7 @@ export class AuthService {
   fbInitAuth() {
 
 
-    firebase.initializeApp(config.fbConfig);
+    firebase.initializeApp(environment.firebase);
 
   }
 
@@ -103,7 +103,7 @@ export class AuthService {
 
     this.isAuthenticated = true;
 
-    this.router.navigate(['/home']);
+    this.router.navigate(['/home/aircrafts']);
 
   }
 

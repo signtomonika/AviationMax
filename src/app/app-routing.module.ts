@@ -9,30 +9,29 @@ const routes: Routes = [
 
   {
 
-    path: "",
+    path: '',
     data: { pageTitle: "Login" },
     redirectTo: "auth/login",
     pathMatch: "full"
   },
 
   {
-    path: "home",
+    path: 'home',
     component: MainLayoutComponent,
     canActivate: [AuthGuard],
     children: [
-      {
-        path: "home",
-        redirectTo: "home",
-        pathMatch: "full"
+            {
+        path: '',
+        loadChildren: "./features/home/home.module#HomeModule"
       },
       {
-        path: "home",
-        loadChildren: "./features/home/home.module#HomeModule"
+        path: 'aircrafts',
+        loadChildren: "./features/aircrafts/aircrafts.module#AircraftsModule"
       }
     ]
   },
   {
-    path: "auth",
+    path: 'auth',
     component: AuthLayoutComponent,
     loadChildren: "./features/auth/auth.module#AuthModule"
   },

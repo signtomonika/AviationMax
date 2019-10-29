@@ -1,0 +1,139 @@
+<div id="content">
+  <div class="row">
+    <sa-big-breadcrumbs [items]="['Aircrafts']" icon="plane" class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+    </sa-big-breadcrumbs>
+  </div>
+  <div class="row">
+    <div class="col-sm-9" *ngIf="aircrafts?.length > 0 ; else noList">
+      <div class="well padding-10">
+        <div class="row" *ngFor="let aircraft of aircrafts">
+          <div class="col-md-4 frame" style="display: flex; justify-content: center;">
+            <span class="helper"></span>
+            <img [src]="imgFolder+aircraft.type+imgExtn" class="img-responsive" alt="assets/img"
+              style="vertical-align: middle; margin-top: 10%">
+
+          </div>
+          <div class="col-md-3 padding-left-0">
+            <h3 class="margin-top-0"> {{aircraft.type}} </h3>
+
+            <h4><strong>Manager :</strong> {{aircraft.manager}} </h4>
+
+            <h4><strong>Hours :</strong> {{aircraft.hours}} </h4>
+
+            <h4><strong>Tail Number :</strong> {{aircraft.tailnumber}} </h4> <br>
+
+            <!--  Aircraft Options : Delete and Edit -->
+
+            <div *ngIf="editState && aircraftToEdit.id == aircraft.id">
+
+                <a class="btn btn-warning" (click)="showEdit(aircraft)"> Edit </a> &nbsp;
+                <a class="btn btn-danger" (click)="deleteAircraft(aircraft)"> Delete </a>
+            </div>
+
+            <hr>
+          </div>
+          <!-- Control visibility of Aircraft Options -->
+          <div class="col-md-1 padding-left-0">
+            <a><i (click)="showAircraftOptions(aircraft)" class="fa fa-pencil"></i></a>
+          </div>
+          <!-- Edit / Update Aircraft Details -->
+          <div class="col-md-4 padding-left-0" *ngIf="isAircraftEdit && aircraftToEdit.id == aircraft.id">
+              <form class="smart-form client-form" (ngSubmit)="updateAircraft(aircraft)" #f="ngForm">
+    
+                  <fieldset>
+                    <section>
+                     
+                      <label class="input"> <i class="icon-append fa fa-user"></i>
+                        <input type="text" name="manager" class="form-control" [(ngModel)]="aircraft.manager" #manager="ngModel" required>
+                        <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>
+                          Please enter Manager Full Name</b></label>
+                          <span class="help-block txt-color-red" *ngIf="manager.touched && !manager.valid ">Enter a valid Manager Name</span>
+                    </section>
+                    <section>
+                      <label class="label">Hours</label>
+                      <label class="input"> <i class="icon-append fa fa-clock-o"></i>
+                        <input type="number" name="hours"  [(ngModel)]="aircraft.hours" #hours="ngModel"  required  class="form-control">
+                        <b class="tooltip tooltip-top-right"><i class="fa fa-clock-o txt-color-teal"></i> Enter
+                          Hours</b> </label>
+                          <span class="help-block txt-color-red" *ngIf="hours.touched && !hours.valid ">Enter a valid hour</span>
+                      <!--  -->
+                    </section>
+              
+                    <section>
+                        <label class="label">Tail Number</label>
+                        <label class="input"> <i class="icon-append fa fa-fighter-jet"></i>
+                          <input type="text" name="tailnumber"  [(ngModel)]="aircraft.tailnumber"  #tailnumber="ngModel" required minlength="7" class="form-control">
+                          <b class="tooltip tooltip-top-right"><i class="fa fa-fighter-jet txt-color-teal"></i> Enter
+                            Tail Number</b> </label>
+                            <span class="help-block txt-color-red" *ngIf="tailnumber.touched && !tailnumber.valid ">Enter a valid tail number</span>
+                        <!--  -->
+                      </section>
+              
+                      <section>
+                          <label class="label">Aircraft Type</label>
+                          <label class="input"> <i class="icon-append fa fa-archive"></i>
+                            <input type="text" name="type"  [(ngModel)]="aircraft.type"  #type="ngModel" required  class="form-control">
+                            <b class="tooltip tooltip-top-right"><i class="fa fa-archive txt-color-teal"></i> Enter
+                              Aircraft Type</b> </label>
+                              <span class="help-block txt-color-red" *ngIf="type.touched && !type.valid ">Enter a valid aircraft type</span>
+                          <!--  -->
+                        </section>
+                
+                  </fieldset>
+                  <footer>
+                    <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
+                      Update Aircraft Details
+                    </button>
+                  </footer>
+                </form>
+            </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <ng-template #noList>
+
+      <div class="well padding-10">
+        <div class="row">
+
+          <p>No List</p>
+
+        </div>
+
+      </div>
+    </ng-template>
+
+
+
+    <div class="col-sm-3">
+      <div class="well padding-10">
+        <h5 class="margin-top-0"><i class="fa fa-search"></i> Aircraft Search...</h5>
+        <div class="input-group">
+          <input type="text" class="form-control">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <i class="fa fa-search"></i>
+            </button> </span>
+        </div>
+        <!-- /input-group -->
+      </div>
+      <!-- /well -->
+
+      <div class="well padding-10">
+        <h5 class="margin-top-0"><i class="fa fa-plus"></i> Add Aircraft</h5>
+
+        <!-- Add Aircraft -->
+
+        <sa-add-aircraft></sa-add-aircraft>
+
+        <!-- /input-group -->
+      </div>
+      <!-- /well -->
+
+    </div>
+  </div>
+</div>
