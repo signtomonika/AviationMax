@@ -1,6 +1,5 @@
 # Aviation Max
 
-[live](https://smartadmin-angular.firebaseapp.com) demo
 
 ## AOT Note
 Starting from version 0.4.5 we are supporting AOT builds.  
