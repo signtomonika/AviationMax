@@ -11,6 +11,8 @@ import { Aircraft } from '@app/models/aircraft';
 })
 export class ListAircraftComponent implements OnInit {
 
+  searchModel: string;
+
   options: any;
 
   aircrafts: Aircraft[];

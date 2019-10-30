@@ -11,10 +11,13 @@ import { environment } from '@env/environment';
 import { AircraftService } from '@app/services/aircraft.service';
 import { AddAircraftComponent } from './add-aircraft/add-aircraft.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AircraftFilterPipe } from './list-aircraft/aircraft-filter.pipe';
+
+
 
 
 @NgModule({
-  declarations: [ListAircraftComponent, AddAircraftComponent],
+  declarations: [ListAircraftComponent, AddAircraftComponent,  AircraftFilterPipe],
   imports: [
     CommonModule,
     FormsModule,

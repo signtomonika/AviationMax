@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-sm-9" *ngIf="aircrafts?.length > 0 ; else noList">
       <div class="well padding-10">
-        <div class="row" *ngFor="let aircraft of aircrafts">
+        <div class="row" *ngFor="let aircraft of aircrafts | aircraftFilter: searchModel ">
           <div class="col-md-4 frame" style="display: flex; justify-content: center;">
             <span class="helper"></span>
             <img [src]="imgFolder+aircraft.type+imgExtn" class="img-responsive" alt="assets/img"
@@ -113,7 +113,7 @@
       <div class="well padding-10">
         <h5 class="margin-top-0"><i class="fa fa-search"></i> Aircraft Search...</h5>
         <div class="input-group">
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" [(ngModel)]="searchModel">
           <span class="input-group-btn">
             <button class="btn btn-default" type="button">
               <i class="fa fa-search"></i>
